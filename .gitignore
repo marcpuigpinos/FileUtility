@@ -30,3 +30,12 @@
 *.exe
 *.out
 *.app
+
+# Folders
+bin/
+obj/
+
+# Projects
+*.cbp
+*.depend
+*.layout
