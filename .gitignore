@@ -39,3 +39,6 @@ obj/
 *.cbp
 *.depend
 *.layout
+
+# Textfiles
+*.txt

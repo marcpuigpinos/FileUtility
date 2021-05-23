@@ -4,6 +4,8 @@ module mLine
 
     use mUtilities
 
+    use mWord
+
     implicit none
 
     public :: line_
@@ -21,7 +23,7 @@ module mLine
         procedure :: getNextWordDefaultSeparator_line_
         procedure :: getNextWordBySeparator_line_
         generic   :: getNextWord       => getNextWordDefaultSeparator_line_,&
-        !                                    getNextWordBySeparator_line_
+                                          getNextWordBySeparator_line_
         !procedure :: isEqualToString_line_
         !procedure :: isEqualToWord_line_
         !generic   :: isEqual           => isEqualToString_line_,&
@@ -49,14 +51,14 @@ module mLine
 
     !Type bound procedures
     function getNextWordDefaultSeparator_line_(this) result(word)
-        class(line_), intent(in) :: this
-        class(word_)             :: word
+        class(line_), intent(in)  :: this
+        class(word_), allocatable :: word
     end function
-    
+
     function getNextWordBySeparator_line_(this, sep) result(word)
-        class(line_), intent(in) :: this
-        class(word_)             :: word
-        character(*), intent(in) :: sep
+        class(line_), intent(in)  :: this
+        class(word_), allocatable :: word
+        character(*), intent(in)  :: sep
     end function
 
     !Module procedures
